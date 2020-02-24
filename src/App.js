@@ -5,13 +5,9 @@ import ExpenseForm from'./components/ExpenseForm.js'
 import './styles/styles.css'
 import uuid from 'uuid/v4'
 
-const initialExpenses = [
-  {id: uuid(), charge:'mortgage', amount: 1250},
-  {id: uuid(), charge:'auto payment', amount: 450},
-  {id: uuid(), charge:'insurance', amount: 500},
-  {id: uuid(), charge:'credit cards', amount: 1000},
 
-]
+const initialExpenses = localStorage.getItem('expenses')? 
+  JSON.parse(localStorage.getItem('expenses')) : []
 
 function App () {
   
@@ -19,13 +15,21 @@ function App () {
   const [charge, setCharge] = useState('')
   const [amount, setAmount] = useState('')
   const [alert, setAlert] = useState({show:false})
+  const [edit, setEdit] = useState(false)
+  const [id, setId] = useState(0)
+  
 
   const handleCharge = e =>{
     setCharge(e.target.value)
   }
 
   const handleAmount = e =>{
-    setAmount(e.target.value)
+    const amount = e.target.value
+      if(amount === ''){
+        setAmount(amount)
+      }else{
+        setAmount(parseInt(amount))
+      }
   }
 
   const handleAlert = ({type, text}) =>{
@@ -38,23 +42,44 @@ function App () {
   const handleSubmit = e =>{
     e.preventDefault()
     if (charge !== '' && amount > 0){
-      const singleExpense = {id:uuid(),charge,amount}
-      setExpenses([...expenses,singleExpense])
+       if(edit){
+        const tempExpenses = expenses.map(expense =>{
+           return expense.id === id?{...expense,charge,amount} :expense
+        }) 
+        setExpenses(tempExpenses)
+       }else{
+         const singleExpense = {id:uuid(),charge,amount}
+         setExpenses([...expenses,singleExpense])
+         handleAlert({type: 'success', text: 'item added'})
+
+       }
       setCharge('')
       setAmount('')
-      handleAlert({type: 'success', text: 'item added'})
     }else{
       handleAlert({type: 'danger', text: "can't be an empty value & amount must be larger than 0"})
     }
   }
 
-
-const handleDelete = (id) =>{
-  console.log(`item deleted : ${id}`)
+const clearItems = () =>{
+  
+  setExpenses([])
 }
 
-const handleEdit = (id) =>{
-  console.log(`item deleted : ${id}`)
+const handleDelete = id => {
+  let filteredExpenses = expenses.filter(expense => expense.id !== id);
+  setExpenses(filteredExpenses);
+  handleAlert({ type: "danger", text: "item deleted" });
+}
+
+
+const handleEdit = id =>{
+   const expenseItem = expenses.find(item => item.id === id)
+   const {charge, amount} = expenseItem
+   setCharge(charge)
+   setAmount(amount)
+   setEdit(true)
+   setId(id)
+  console.log(expenseItem)
 }
 
   return (
@@ -73,9 +98,15 @@ const handleEdit = (id) =>{
             handleSubmit={handleSubmit}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
-            // handleClear={}
+            edit={edit}
+            
         />
-        <ExpenseList expenses={expenses} />
+        <ExpenseList 
+            expenses={expenses} 
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+            clearItems={clearItems}
+            />
       </div>
       <h1>
         Total Spending: 

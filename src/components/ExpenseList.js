@@ -4,19 +4,28 @@ import {MdDelete} from 'react-icons/md'
 
 
 const ExpenseList = (props) => {
-    console.log(props.expenses)
-    const mappedExpenses = props.expenses.map((expense) =>{
-        return <Expense key={expense.id} expense={expense} />
+    const {expenses, handleEdit, handleDelete, clearItems} = props
+    
+    const mappedExpenses = expenses.map((expense) =>{
+        return <Expense 
+        key={expense.id}
+        expense={expense}
+        handleDelete={handleDelete} 
+        handleEdit={handleEdit}
+
+        />
     })
     return (
         <>
           <ul> 
             {mappedExpenses}
-           </ul>     
-            {props.expenses.length > 0 && <button className='btn'>
-                Clear Expenses
-                <MdDelete className='btn-icon' />   
-            </button>}
+           </ul>   
+           {expenses.length > 0 && (
+                <button className="btn" onClick={clearItems}>
+                clear expenses
+                <MdDelete className="btn-icon" />
+            </button>
+           )}   
 
         </>
     )
