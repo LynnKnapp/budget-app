@@ -16,8 +16,8 @@ const ExpenseList = (props) => {
         />
     })
     return (
-        <>
-          <ul> 
+        <div className='list-cont'>
+          <ul className='list'> 
             {mappedExpenses}
            </ul>   
            {expenses.length > 0 && (
@@ -27,7 +27,7 @@ const ExpenseList = (props) => {
             </button>
            )}   
 
-        </>
+        </div>
     )
 }
 

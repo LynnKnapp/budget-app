@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './styles/styles.css'
 import Alert from './components/Alert'
 import ExpenseList from'./components/ExpenseList.js'
 import ExpenseForm from'./components/ExpenseForm.js'
@@ -59,6 +60,7 @@ function App () {
       handleAlert({type: 'danger', text: "can't be an empty value & amount must be larger than 0"})
     }
   }
+  
 
 const clearItems = () =>{
   
@@ -83,7 +85,7 @@ const handleEdit = id =>{
 }
 
   return (
-    <>
+    <div className= 'app-cont'>
       {alert.show && <Alert 
         type={alert.type}
         text={alert.text}
@@ -108,15 +110,15 @@ const handleEdit = id =>{
             clearItems={clearItems}
             />
       </div>
-      <h1>
-        Total Spending: 
+      <h1 className='total-spending'>
+        Total Spent: 
         <span className='total'>
          $ {expenses.reduce((acc, curr) =>{
            return (acc += parseInt(curr.amount)) //parses string to int
          },0)}
         </span>
       </h1>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {                                             
+  margin: 0;
+  box-sizing: border-box;
+  background-color:  rgba(189, 200, 211, 0.938);
+}
+
+.app-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; 
+    margin-top: 20px;  
+}
+.list{
+    border: solid teal 5px
+}
+.expense-cont{
+    border: solid black 2px
+}
+.form-container{
+    border: solid rgb(6, 63, 6) 5px
+}
+body {
+  background-color: #eaeef39d;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 2rem 0;
+  color: var(--mainWhite);
+  letter-spacing: 3px;
+  color: #042e72;
+  margin-top: 80px;
+  font-size: 40px
+}
+.form{
+    background-color: rgba(202, 209, 218, 0.938);
+ 
+}
+.btn-cont{
+    background-color: rgba(202, 209, 218, 0.938);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.total-spending{
+    font-size: 30px;
+}
+.App {
+  margin: 0 auto;
+  background-color: rgba(202, 209, 218, 0.938);
+  border-radius: 6px;
+  box-shadow:  #021636 3px 6px 7px ;
+  border: solid #053a8f 5px;
+  width: 200px;
+}
+.form-center {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(202, 209, 218, 0.938);
+
+}
+.form-group {
+    background-color: rgba(202, 209, 218, 0.938);
+    display: flex;
+    flex-direction: column;      
+}
+label {
+  display: block;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+.form-cont > form > div > div > div:nth-child(1) > label{
+    background-color: rgba(202, 209, 218, 0.938);
+
+}
+.form-cont > form > div > div > div:nth-child(2) > label{
+    background-color: rgba(202, 209, 218, 0.938);
+
+}
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--mainGrey);
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  /* width: 100%; */
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+.btn {
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-size: 10px;
+  outline: 0;
+  border: solid  rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  display: block;
+  height: 30px;
+  line-height: 36px;
+  padding: 0 10px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  cursor: progress;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 99px;
+  position: align-to-parent(middle, middle);    
+}
+
+.btn:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.btn-icon {
+  margin-left: 0.75rem;
+  font-size: .75rem;
+}
+.list {
+  margin: 2rem 0.75rem 0 0.75rem;
+  list-style-type: none;
+  border: none;
+  padding: 0;
+}
+.item {
+  background-color: var(--mainWhite);
+  line-height: 1.5rem;
+  padding: 10px 20px;
+  /* margin-bottom: 1rem; */
+  border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s linear;
+}
+.item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: scale(1.05);
+}
+.info {
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.expense {
+  margin-right: 2rem;
+  text-transform: capitalize;
+}
+.amount {
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--mainWhite);
+  background-color: var(--primaryColor);
+  border-radius: 2px;
+  padding: 1px 3px;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  outline: none;
+  cursor: pointer;
+}
+.clear-btn {
+  color: var(--mainRed);
+}
+.edit-btn {
+  color: var(--mainGreen);
+}
+.total {
+  font-weight: 300;
+  color: var(--mainWhite);
+  background-color: var(--primaryColor);
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+.alert {
+  padding: 0.75rem 1.25rem;
+  color: var(--mainWhite);
+  text-align: center;
+  text-transform: capitalize;
+  width: 90%;
+  margin: 2rem auto 0 auto;
+  border-radius: 2px;
+  text-transform: capitalize;
+}
+.alert-danger {
+  background: var(--mainRed);
+}
+.alert-success {
+  background: var(--mainGreen);
+}
+@media screen and (min-width: 601px) {
+  .App,
+  .list,
+  .alert {
+    width: 85%;
+  }
+
+  .list {
+    margin: 2rem auto 0 auto;
+  }
+}
+@media screen and (min-width: 993px) {
+  .App,
+  .list,
+  .alert {
+    width: 70%;
+  }
+  .list {
+    margin: 2rem auto 0 auto;
+  }
+  .info {
+    flex: 0 0 50%;
+  }
+}
+
