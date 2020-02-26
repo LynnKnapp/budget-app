@@ -18,8 +18,10 @@
     border: solid teal 5px
 }
 .expense-cont{
-    border: solid black 2px
+    border: solid black 2px;
+    background-color: rgba(202, 209, 218, 0.938);
 }
+
 .form-container{
     border: solid rgb(6, 63, 6) 5px
 }
@@ -84,6 +86,7 @@ label {
     background-color: rgba(202, 209, 218, 0.938);
 
 }
+
 .form-control {
   background-color: transparent;
   border: none;
@@ -115,7 +118,7 @@ label {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
-  width: 99px;
+  width: 148px;
   position: align-to-parent(middle, middle);    
 }
 
@@ -133,20 +136,37 @@ label {
   padding: 0;
 }
 .item {
-  background-color: var(--mainWhite);
   line-height: 1.5rem;
   padding: 10px 20px;
-  /* margin-bottom: 1rem; */
   border: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
   transition: all 0.3s linear;
+}
+.list-cont{
+  background-color: rgba(202, 209, 218, 0.938);
+}
+.list-cont > ul > div > li{
+  background-color: rgba(202, 209, 218, 0.938);
+}
+.list-cont > ul > div > li > div.info > span.expense{
+  background-color: rgba(202, 209, 218, 0.938);  
+}
+.list-cont > ul > div > li > div:nth-child(2) > button.edit-btn{
+  background-color: rgba(202, 209, 218, 0.938);   
+}
+.list-cont > ul > div > li > div:nth-child(2) > button.clear-btn{
+  background-color: rgba(202, 209, 218, 0.938);   
+}
+.list-cont > ul > div > li > div:nth-child(2) > button.edit-btn > svg{
+    background-color: rgba(202, 209, 218, 0.938);  
 }
 .item:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   transform: scale(1.05);
 }
 .info {
+  background-color: rgba(202, 209, 218, 0.938);
   flex: 0 0 60%;
   display: flex;
   justify-content: space-between;

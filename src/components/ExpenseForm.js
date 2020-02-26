@@ -2,7 +2,13 @@ import React from 'react'
 import { MdSend } from 'react-icons/md'
 
 const ExpenseForm = (props) => {
-        const {charge, amount, handleCharge, handleAmount, handleSubmit, handleEdit} = props
+        const {charge, amount, handleCharge, handleAmount, handleSubmit} = props
+
+        // const [isToggled, setToggled] = useState(false);
+  
+        // const toggleBtn = () => setToggled(!isToggled);
+        
+
     return (
         <div className='form-cont'>
             <form className= 'form'onSubmit={handleSubmit}>
@@ -33,13 +39,22 @@ const ExpenseForm = (props) => {
                     </div>
                 </div> 
                 <div className='btn-cont'>  
-                    <button className='btn'>submit
-                        {/* {edit? 'edit' : 'submit'}  */}
-                        <MdSend className='btn-icon' />   
-                    </button> 
-                    <button className='btn' onClick={handleEdit}>edit
-                        <MdSend className='btn-icon' /> 
-                    </button> 
+                <button type= 'submit' className='btn' onClick={handleSubmit}>submit
+                    <MdSend className='btn-icon' />   
+                </button>  
+                     {/* { toggleBtn ?
+                        <>
+                            <button className='btn' onClick={handleSubmit}>submit
+                                <MdSend className='btn-icon' />   
+                            </button> 
+                            </>
+                            :
+                            <>
+                            <button className='btn' onClick={handleSubmit}>edit
+                                <MdSend className='btn-icon' /> 
+                            </button>
+                        </>
+                    }   */}
                 </div>        
             </form> 
         </div>     

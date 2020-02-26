@@ -81,6 +81,7 @@ const handleEdit = id =>{
    setAmount(amount)
    setEdit(true)
    setId(id)
+
   console.log(expenseItem)
 }
 
