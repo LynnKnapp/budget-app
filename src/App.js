@@ -48,6 +48,7 @@ function App () {
            return expense.id === id?{...expense,charge,amount} :expense
         }) 
         setExpenses(tempExpenses)
+        setEdit(false)
        }else{
          const singleExpense = {id:uuid(),charge,amount}
          setExpenses([...expenses,singleExpense])
@@ -56,6 +57,7 @@ function App () {
        }
       setCharge('')
       setAmount('')
+      setId("")
     }else{
       handleAlert({type: 'danger', text: "can't be an empty value & amount must be larger than 0"})
     }
@@ -71,6 +73,7 @@ const handleDelete = id => {
   let filteredExpenses = expenses.filter(expense => expense.id !== id);
   setExpenses(filteredExpenses);
   handleAlert({ type: "danger", text: "item deleted" });
+  setId("")
 }
 
 

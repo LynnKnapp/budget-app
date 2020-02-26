@@ -11,8 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh; 
-    margin-top: 20px;  
+    height: 70vh; 
 }
 .list{
     border: solid teal 5px
@@ -71,7 +70,10 @@ h1 {
 .form-group {
     background-color: rgba(202, 209, 218, 0.938);
     display: flex;
-    flex-direction: column;      
+    flex-direction: column;
+    width: 30vw;
+    margin-left: 140px;
+          
 }
 label {
   display: block;
@@ -94,7 +96,6 @@ label {
   border-radius: 0;
   outline: none;
   height: 3rem;
-  /* width: 100%; */
   font-size: 16px;
   margin: 0 0 8px 0;
   padding: 0;
@@ -102,25 +103,27 @@ label {
 .btn {
   text-decoration: none;
   letter-spacing: 0.5px;
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: bold;
   outline: 0;
   border: solid  rgba(0, 0, 0, 0.12);
   border-radius: 3px;
   display: block;
   height: 30px;
-  line-height: 36px;
-  padding: 0 10px;
+  text-align: center;
+  line-height: 15px;
   text-transform: uppercase;
   margin: 0 auto;
   cursor: progress;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: 5px;
-  width: 148px;
-  position: align-to-parent(middle, middle);    
+  width: 131px;  
 }
+
 
 .btn:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -220,28 +223,92 @@ label {
 .alert-success {
   background: var(--mainGreen);
 }
-@media screen and (min-width: 601px) {
-  .App,
-  .list,
-  .alert {
-    width: 85%;
-  }
 
-  .list {
-    margin: 2rem auto 0 auto;
+
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+    .App,
+    .list,
+    .alert {
+      width: 85%;
+    }
+  
+    .list {
+      margin: 2rem auto 0 auto;
+    }
+    .form-group {
+      margin-left: 11px;
+      width: 23vw;         
   }
+  .item{
+      width: 69vw;
+      padding: 0px 5px;
+  }
+  .list-cont > ul > div > li > div.info > span.expense {
+    font-size: 14px;
+    }
+    .amount{
+        font-size: 14px;
+    }
+    .edit-btn{
+        font-size: .95rem;
+    }
+    .clear-btn{
+        font-size: .85rem;
+    }
+    label{
+        font-size: 20px;
+    }
+    .btn {
+        font-size: 7px;
+        height: 24px;
+        line-height: 20px;
+        width: 131px; 
+        margin-bottom: 4px;    
+      }
+    h1{
+        font-size: 32px;
+    }
+    .total-spending {
+        font-size: 24px;
+    }  
 }
-@media screen and (min-width: 993px) {
-  .App,
-  .list,
-  .alert {
-    width: 70%;
-  }
-  .list {
-    margin: 2rem auto 0 auto;
-  }
-  .info {
-    flex: 0 0 50%;
-  }
+@media only screen and (min-width: 768px) {
+    .App,
+    .list,
+    .alert {
+      width: 70%;
+    }
+    .list {
+      margin: 2rem auto 0 auto;
+    }
+    .info {
+      flex: 0 0 50%;
+    }
+    .form-group {
+      width: 20vw;
+      margin-left: 70px;       
+    }
+    label{
+        font-size: 26px;
+    }
+    .form-control{
+        margin: 0px 0 8px 23px;
+    }
+    .btn {
+        font-size: 7px;
+        height: 23px;
+        line-height: 20px;
+        width: 124px; 
+        margin-bottom: 4px;    
+    }
+    .item{
+        width: 47vw;
+        padding: 0px 5px;
+    }
+  
+  
+    
 }
+
 
